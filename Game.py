@@ -77,7 +77,7 @@ class TicTacToe:
         self._show_board()
         self.player1 = HumanPlayer("X")
         if with_comp:
-            self.player2 = CompPlayer(r"QlearnStats\secondPlayerMoves", unjustified=0, sign="O")
+            self.player2 = CompPlayer(r"./QlearnStats/secondPlayerMoves", unjustified=0, sign="O")
             self.player2.load_knowledge()
         else:
             self.player2 = HumanPlayer("O")
@@ -102,8 +102,8 @@ class TicTacToe:
                 self.player1.my_turn, self.player2.my_turn = self.player2.my_turn, self.player1.my_turn
 
     def train(self, n_times=1_000_000):
-        self.player1 = CompPlayer(r"QlearnStats\firstPlayerMoves", sign="X")
-        self.player2 = CompPlayer(r"QlearnStats\secondPlayerMoves", sign="O")
+        self.player1 = CompPlayer(r"./QlearnStats/firstPlayerMoves", sign="X")
+        self.player2 = CompPlayer(r"./QlearnStats/secondPlayerMoves", sign="O")
         self.player1.load_knowledge()
         self.player2.load_knowledge()
         order = [True, False]
