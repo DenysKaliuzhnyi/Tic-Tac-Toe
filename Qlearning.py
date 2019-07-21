@@ -55,6 +55,5 @@ class Qlearning:
         try:
             with open(file_name, 'rb') as handle:
                 self.Q = defaultdict(lambda: 1.0, pickle.load(handle))
-            print(self.Q)
         except EOFError:
             print(f"{file_name} is empty!")
