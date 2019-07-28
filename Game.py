@@ -2,6 +2,7 @@ import pygame
 import random
 import time
 import Qlearning
+pygame.init()
 
 
 class Player:
@@ -71,7 +72,6 @@ class TicTacToe:
         self.ttt = None
 
     def play(self, *, with_comp=True):
-        pygame.init()
         self._init_window()
         self._reset_game()
         self._show_board()
